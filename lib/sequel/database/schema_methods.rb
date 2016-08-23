@@ -26,7 +26,7 @@ module Sequel
     # The alter table operations that are combinable.
     COMBINABLE_ALTER_TABLE_OPS = [:add_column, :drop_column, :rename_column,
       :set_column_type, :set_column_default, :set_column_null,
-      :add_constraint, :drop_constraint, :set_column_comment, :change_column]
+      :add_constraint, :drop_constraint, :set_column_comment, :update_column]
 
     # Adds a column to the specified table. This method expects a column name,
     # a datatype and optionally a hash with additional constraints and options:
@@ -414,11 +414,11 @@ module Sequel
     end
 
     def set_column_comment(table, *args)
-      alter_table(table) {set_column_type(*args)}
+      alter_table(table) {set_column_comment(*args)}
     end
 
-    def change_column(table, *args)
-      alter_table(table) {change_column(*args)}
+    def update_column(table, *args)
+      alter_table(table) {update_column(*args)}
     end
 
     private

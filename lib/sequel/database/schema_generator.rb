@@ -345,8 +345,8 @@ module Sequel
         @operations << {:op => :set_column_comment, :name => name, :type => type}.merge!(opts)
       end
 
-      def change_column(name, new_name, type, opts = OPTS)
-        @operations << {:op => :change_column, :name => name, :type => type, :new_name => new_name}.merge!(opts)
+      def update_column(name, new_name, type, opts = OPTS)
+        @operations << {:op => :update_column, :name => name, :type => type, :new_name => new_name}.merge!(opts)
       end
 
       # Add a constraint with the given name and args to the DDL for the table.
