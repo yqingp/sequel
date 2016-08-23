@@ -473,7 +473,7 @@ module Sequel
     end
 
     def alter_table_set_column_comment_sql(table, op)
-      "CHANGE #{op[:name]} #{op[:name]} #{column_definition_sql(op)}"
+      "CHANGE `#{op[:name]}`  #{column_definition_sql(op)}"
     end
 
     def alter_table_drop_constraint_sql(table, op)
