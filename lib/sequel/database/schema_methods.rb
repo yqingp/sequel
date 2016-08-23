@@ -481,7 +481,7 @@ module Sequel
       "CHANGE `#{op[:name]}`  #{column_definition_sql(op)}"
     end
 
-    def alter_table_change_column_sql(table, op)
+    def alter_table_update_column_sql(table, op)
       new_name = op.delete(:new_name)
       name = op.delete(:name)
       op[:name] = new_name
