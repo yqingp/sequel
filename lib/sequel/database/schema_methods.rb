@@ -28,6 +28,7 @@ module Sequel
       :set_column_type, :set_column_default, :set_column_null,
       :add_constraint, :drop_constraint, :set_column_comment, :update_column]
 
+
     # Adds a column to the specified table. This method expects a column name,
     # a datatype and optionally a hash with additional constraints and options:
     #
